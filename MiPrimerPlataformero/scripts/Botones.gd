@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	var play = get_node("Play")
-	var exit = get_node("Exit")
+	var play = get_node("VBoxContainer/Play")
+	var exit = get_node("VBoxContainer/Exit")
 	play.pressed.connect(init_game)
 	exit.pressed.connect(quit)
 	var level = preload("res://scenes/level_one.tscn")

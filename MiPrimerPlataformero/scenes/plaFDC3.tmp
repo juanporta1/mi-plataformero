@@ -1,10 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://bbglsexapffq4"]
+[gd_scene load_steps=30 format=3 uid="uid://bbglsexapffq4"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ten3m"]
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="2_kftm3"]
-[ext_resource type="Script" path="res://scripts/points_canvas.gd" id="3_s62o6"]
-[ext_resource type="Texture2D" uid="uid://di1m7shyd3pjf" path="res://Assets_PixelAdventure/Items/Checkpoints/End/End (Idle).png" id="4_gu6n8"]
-[ext_resource type="FontFile" uid="uid://6kevsfysjxx2" path="res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf" id="5_8ybcm"]
+[ext_resource type="Texture2D" uid="uid://cmvtg1vd8uvl7" path="res://Assets_PixelAdventure/Items/Fruits/Kiwi.png" id="3_7kbjm"]
+[ext_resource type="FontFile" uid="uid://j8j6rawwl7w" path="res://Assets_PixelAdventure/Fonts/COMICATE.TTF" id="4_5o6sq"]
+[ext_resource type="Script" path="res://scripts/points.gd" id="4_ikn1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xr426"]
 atlas = ExtResource("2_kftm3")
@@ -186,11 +186,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uucpn"]
 size = Vector2(20, 26)
 
-[sub_resource type="GDScript" id="GDScript_353el"]
-script/source = "extends Label
-
-"
-
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_ten3m")
@@ -218,21 +213,19 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("3_s62o6")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(34, 28)
-scale = Vector2(1, 0.91)
-texture = ExtResource("4_gu6n8")
+position = Vector2(-371, -164)
+scale = Vector2(2.82353, 2.875)
+texture = ExtResource("3_7kbjm")
+hframes = 16
 
 [node name="Points" type="Label" parent="CanvasLayer"]
-offset_left = 64.0
-offset_top = 14.0
-offset_right = 89.0
-offset_bottom = 57.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_8ybcm")
+offset_left = -331.0
+offset_top = -187.0
+offset_right = -306.0
+offset_bottom = -144.0
+theme_override_fonts/font = ExtResource("4_5o6sq")
 theme_override_font_sizes/font_size = 40
 text = "0"
-script = SubResource("GDScript_353el")
+script = ExtResource("4_ikn1a")

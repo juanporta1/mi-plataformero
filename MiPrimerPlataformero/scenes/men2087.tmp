@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2nn2rmme0ekt"]
+
+[ext_resource type="Script" path="res://scripts/Botones.gd" id="1_2s6sl"]
+[ext_resource type="FontFile" uid="uid://4sd2eitg5l1x" path="res://fonts/Crang16px.ttf" id="1_arqpx"]
+[ext_resource type="Script" path="res://scripts/Exit.gd" id="3_ej03s"]
+[ext_resource type="Script" path="res://scripts/Play.gd" id="4_p76qh"]
+
+[sub_resource type="Theme" id="Theme_vhhvv"]
+default_font = ExtResource("1_arqpx")
+default_font_size = 150
+
+[node name="Menu" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Botones" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2s6sl")
+
+[node name="Exit" type="Button" parent="Botones"]
+layout_mode = 0
+offset_left = -206.0
+offset_top = 44.0
+offset_right = 210.0
+offset_bottom = 203.0
+theme = SubResource("Theme_vhhvv")
+text = "EXIT"
+flat = true
+script = ExtResource("3_ej03s")
+
+[node name="Play" type="Button" parent="Botones"]
+layout_mode = 0
+offset_left = -229.0
+offset_top = -158.0
+offset_right = 229.0
+offset_bottom = 1.0
+theme = SubResource("Theme_vhhvv")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "PLAY"
+flat = true
+script = ExtResource("4_p76qh")
+
+[connection signal="pressed" from="Botones/Play" to="Botones" method="_on_play_pressed"]

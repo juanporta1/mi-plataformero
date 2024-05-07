@@ -1,45 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2nn2rmme0ekt"]
+[gd_scene load_steps=11 format=3 uid="uid://b2nn2rmme0ekt"]
 
 [ext_resource type="Script" path="res://scripts/Botones.gd" id="1_2s6sl"]
 [ext_resource type="FontFile" uid="uid://4sd2eitg5l1x" path="res://fonts/Crang16px.ttf" id="1_arqpx"]
 [ext_resource type="Script" path="res://scripts/Exit.gd" id="3_ej03s"]
+[ext_resource type="FontFile" uid="uid://6kevsfysjxx2" path="res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf" id="3_lonax"]
 [ext_resource type="Script" path="res://scripts/Play.gd" id="4_p76qh"]
+[ext_resource type="Script" path="res://scripts/ParallaxMenu.gd" id="5_exci6"]
+[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Assets_PixelAdventure/Parallax/parallax-00.png" id="5_jcvmm"]
+[ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="6_0qow4"]
+[ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="7_ulbfm"]
 
 [sub_resource type="Theme" id="Theme_vhhvv"]
 default_font = ExtResource("1_arqpx")
 default_font_size = 150
 
 [node name="Menu" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-879.0]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="ParallaxMenu" type="ParallaxBackground" parent="."]
+script = ExtResource("5_exci6")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxMenu"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxMenu/ParallaxLayer"]
+position = Vector2(370, 207.5)
+scale = Vector2(1, 1.16944)
+texture = ExtResource("5_jcvmm")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxMenu"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxMenu/ParallaxLayer2"]
+position = Vector2(372, 241)
+texture = ExtResource("6_0qow4")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxMenu"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxMenu/ParallaxLayer3"]
+position = Vector2(370, 261)
+texture = ExtResource("7_ulbfm")
 
 [node name="Botones" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -1.0
+offset_right = 840.0
+offset_bottom = 419.0
 script = ExtResource("1_2s6sl")
 
-[node name="Exit" type="Button" parent="Botones"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Botones"]
 layout_mode = 0
-offset_left = -206.0
-offset_top = 44.0
-offset_right = 210.0
-offset_bottom = 203.0
-theme = SubResource("Theme_vhhvv")
-text = "EXIT"
-flat = true
-script = ExtResource("3_ej03s")
+offset_right = 840.0
+offset_bottom = 420.0
+theme_override_constants/separation = 30
+alignment = 1
 
-[node name="Play" type="Button" parent="Botones"]
-layout_mode = 0
-offset_left = -229.0
-offset_top = -158.0
-offset_right = 229.0
-offset_bottom = 1.0
+[node name="Play" type="Button" parent="Botones/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
 theme = SubResource("Theme_vhhvv")
+theme_override_colors/font_pressed_color = Color(0.215686, 0.215686, 0.215686, 0.215686)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lonax")
+theme_override_font_sizes/font_size = 90
 text = "PLAY"
 flat = true
 script = ExtResource("4_p76qh")
 
-[connection signal="pressed" from="Botones/Play" to="Botones" method="_on_play_pressed"]
+[node name="Exit" type="Button" parent="Botones/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_vhhvv")
+theme_override_colors/font_pressed_color = Color(0.215686, 0.215686, 0.215686, 0.215686)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lonax")
+theme_override_font_sizes/font_size = 90
+text = "EXIT"
+flat = true
+script = ExtResource("3_ej03s")
+
+[connection signal="pressed" from="Botones/VBoxContainer/Play" to="Botones" method="_on_play_pressed"]

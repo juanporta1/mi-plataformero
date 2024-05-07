@@ -15,6 +15,18 @@ run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+globals_var="*res://globals_var.gd"
+
+[display]
+
+window/size/viewport_width=840
+window/size/viewport_height=420
+window/size/initial_position_type=0
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 move_left={
@@ -38,3 +50,5 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

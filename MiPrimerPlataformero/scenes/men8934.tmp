@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2nn2rmme0ekt"]
+
+[ext_resource type="Script" path="res://scripts/Botones.gd" id="1_2s6sl"]
+[ext_resource type="FontFile" uid="uid://4sd2eitg5l1x" path="res://fonts/Crang16px.ttf" id="1_arqpx"]
+[ext_resource type="PackedScene" uid="uid://g3j816n5b2a4" path="res://parallax.tscn" id="1_qv40v"]
+[ext_resource type="Script" path="res://scripts/Exit.gd" id="3_ej03s"]
+[ext_resource type="Script" path="res://scripts/Play.gd" id="4_p76qh"]
+
+[sub_resource type="Theme" id="Theme_vhhvv"]
+default_font = ExtResource("1_arqpx")
+default_font_size = 150
+
+[node name="Menu" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-879.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 30)
+
+[node name="Parallax" parent="." instance=ExtResource("1_qv40v")]
+position = Vector2(-511, -66)
+
+[node name="Botones" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -406.0
+offset_top = -179.0
+offset_right = 435.0
+offset_bottom = 240.0
+script = ExtResource("1_2s6sl")
+
+[node name="Exit" type="Button" parent="Botones"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 242.0
+offset_right = 611.0
+offset_bottom = 401.0
+theme = SubResource("Theme_vhhvv")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "EXIT"
+flat = true
+script = ExtResource("3_ej03s")
+
+[node name="Play" type="Button" parent="Botones"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 15.682
+anchor_bottom = 4.192
+offset_left = 193.0
+offset_top = 34.0
+offset_right = -12537.6
+offset_bottom = -1563.45
+theme = SubResource("Theme_vhhvv")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "PLAY"
+flat = true
+script = ExtResource("4_p76qh")
+
+[connection signal="pressed" from="Botones/Play" to="Botones" method="_on_play_pressed"]

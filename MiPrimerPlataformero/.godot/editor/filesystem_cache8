@@ -1,6 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714966130
+::res://::1715075567
+globals_var.gd::GDScript::-1::1715042544::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::1869880365903544245::1714961913::1714961919::1::::<><>::
+parallax.tscn::PackedScene::479542437202489553::1715051190::0::1::::<><>::uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://d02l7nnnfajd3::::res://Assets_PixelAdventure/Parallax/parallax-01.png<>uid://cqgs3aseyvj8m::::res://Assets_PixelAdventure/Parallax/parallax-02.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png
 ::res://Assets_PixelAdventure/::1714962074
 20 Enemies.png::CompressedTexture2D::8051730273178817541::1666566378::1714962074::1::::<><>::
 Hello.png::CompressedTexture2D::5329308112658401452::1666566378::1714962074::1::::<><>::
@@ -336,12 +338,20 @@ Idle.png::CompressedTexture2D::8447082495952128997::1666566378::1714962074::1:::
 Jump (28x28).png::CompressedTexture2D::7977340877600571288::1666566378::1714962074::1::::<><>::
 ::res://fonts/::1714962607
 Crang16px.ttf::FontFile::2072865855814066407::1690841238::1714962607::1::::<><>::
-::res://scenes/::1714965884
-level_one.tscn::PackedScene::7216576050277387141::1714965855::0::1::::<><>::uid://bbglsexapffq4::::res://scenes/player.tscn
-menu.tscn::PackedScene::4309194822050312191::1714965855::0::1::::<><>::res://scripts/Botones.gd<>uid://4sd2eitg5l1x::::res://fonts/Crang16px.ttf<>res://scripts/Exit.gd<>res://scripts/Play.gd
-player.tscn::PackedScene::2469696070710361385::1714965884::0::1::::<><>::res://scripts/Player.gd<>uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png
-::res://scripts/::1714965884
-Botones.gd::GDScript::-1::1714964210::0::1::::<>Control<>::
+::res://scenes/::1715051201
+angry_pig.tscn::PackedScene::4614253201034298244::1715051201::0::1::::<><>::res://scripts/AngryPig.gd<>uid://csjkxljehydwk::::res://Assets_PixelAdventure/Enemies/AngryPig/Walk (36x30).png<>res://scripts/DeadZone.gd
+kiwi.tscn::PackedScene::967160002489117429::1715051191::0::1::::<><>::res://scripts/Kiwi.gd<>uid://cmvtg1vd8uvl7::::res://Assets_PixelAdventure/Items/Fruits/Kiwi.png<>uid://c0m6letxf1p3t::::res://Assets_PixelAdventure/Items/Fruits/Collected.png
+level_one.tscn::PackedScene::7216576050277387141::1715051190::0::1::::<><>::uid://bbglsexapffq4::::res://scenes/player.tscn<>uid://g3j816n5b2a4::::res://parallax.tscn<>uid://cbmb5cipyhb2u::::res://Assets_PixelAdventure/Terrain/Terrain (16x16).png<>uid://n1q8powvv5yv::::res://scenes/kiwi.tscn<>uid://b60gct64ma7kq::::res://scenes/angry_pig.tscn
+menu.tscn::PackedScene::4309194822050312191::1715051190::0::1::::<><>::res://scripts/Botones.gd<>uid://4sd2eitg5l1x::::res://fonts/Crang16px.ttf<>res://scripts/Exit.gd<>uid://6kevsfysjxx2::::res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf<>res://scripts/Play.gd<>res://scripts/ParallaxMenu.gd<>uid://cx1qsqa4qwsus::::res://Assets_PixelAdventure/Parallax/parallax-00.png<>uid://cvngflsps17db::::res://Assets_PixelAdventure/Parallax/parallax-03.png<>uid://owlwdggvbxt3::::res://Assets_PixelAdventure/Parallax/parallax-04.png
+player.tscn::PackedScene::2469696070710361385::1715051190::0::1::::<><>::res://scripts/Player.gd<>uid://bei7x67psb4c4::::res://Assets_PixelAdventure/Main Characters/Mask Dude.png<>res://scripts/points_canvas.gd<>uid://di1m7shyd3pjf::::res://Assets_PixelAdventure/Items/Checkpoints/End/End (Idle).png<>uid://6kevsfysjxx2::::res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf
+::res://scripts/::1715051201
+AngryPig.gd::GDScript::-1::1715049682::0::1::::<>CharacterBody2D<>::
+banana.gd::GDScript::-1::1715038727::0::1::::<>Area2D<>::
+Botones.gd::GDScript::-1::1715044867::0::1::::<>Control<>::
+DeadZone.gd::GDScript::-1::1715051201::0::1::::<>Area2D<>::
 Exit.gd::GDScript::-1::1714963442::0::1::::<>Button<>::
+Kiwi.gd::GDScript::-1::1715050596::0::1::::<>Area2D<>::
+ParallaxMenu.gd::GDScript::-1::1715044517::0::1::::<>ParallaxBackground<>::
 Play.gd::GDScript::-1::1714964006::0::1::::<>Button<>::
-Player.gd::GDScript::-1::1714965884::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1715045936::0::1::::<>CharacterBody2D<>::
+points_canvas.gd::GDScript::-1::1715045996::0::1::::<>CanvasLayer<>::

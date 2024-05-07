@@ -1,4 +1,8 @@
-res://scenes/player.tscn
-res://scripts/Player.gd
+res://scenes/angry_pig.tscn
+res://scripts/DeadZone.gd
 res://scenes/menu.tscn
 res://scenes/level_one.tscn
+res://scenes/player.tscn
+res://parallax.tscn
+res://scenes/kiwi.tscn
+res://scripts/Player.gd
